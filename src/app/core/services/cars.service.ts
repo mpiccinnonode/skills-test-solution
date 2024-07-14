@@ -7,7 +7,7 @@ import { cars } from '../constants/cars.consts';
 })
 export class CarsService {
   private _cars = signal<Car[]>([...cars]);
-  private _carsBackup = signal<Car[]>([...cars]);
+  private _carsBackup = [...cars];
 
   constructor() {}
 
@@ -19,12 +19,12 @@ export class CarsService {
     this._cars.update(() => {
       if (keyword) {
         return [
-          ...this._carsBackup().filter((item) =>
+          ...this._carsBackup.filter((item) =>
             item.model.toLowerCase().startsWith(keyword.toLowerCase()),
           ),
         ];
       } else {
-        return [...this._carsBackup()];
+        return [...this._carsBackup];
       }
     });
   }

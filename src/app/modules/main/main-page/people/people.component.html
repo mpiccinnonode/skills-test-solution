@@ -1,6 +1,9 @@
 <div class="flex flex-col gap-3">
   <h1 class="py-2">People</h1>
-  <app-searchbar></app-searchbar>
+  <app-searchbar
+    [(ngModel)]="keyword"
+    (ngModelChange)="filterPeople()"
+  ></app-searchbar>
   <p-table [value]="people()">
     <ng-template pTemplate="header">
       <tr>
