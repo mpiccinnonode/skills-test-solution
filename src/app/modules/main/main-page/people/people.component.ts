@@ -2,11 +2,12 @@ import { Component, computed } from '@angular/core';
 import { PeopleService } from '../../../../core/services/people.service';
 import { Person } from '../../../../core/models/person.model';
 import { TableModule } from 'primeng/table';
+import { SearchbarComponent } from '../../../shared/searchbar/searchbar.component';
 
 @Component({
   selector: 'app-people',
   standalone: true,
-  imports: [TableModule],
+  imports: [TableModule, SearchbarComponent],
   templateUrl: './people.component.html',
   styleUrl: './people.component.scss',
 })
