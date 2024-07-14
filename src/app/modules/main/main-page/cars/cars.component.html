@@ -1,1 +1,19 @@
-<p>cars works!</p>
+<h1 class="py-2">Cars</h1>
+<p-table [value]="cars()">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Year</th>
+      <th>Color</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-car>
+    <tr>
+      <td>{{ car.make }}</td>
+      <td>{{ car.model }}</td>
+      <td>{{ car.year }}</td>
+      <td>{{ car.color }}</td>
+    </tr>
+  </ng-template>
+</p-table>
